@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tip_query"
+        android:layout_width="@dimen/query_tip_width"
+        android:layout_height="wrap_content"
+        android:text="@string/query_tip">
+
+</Button>

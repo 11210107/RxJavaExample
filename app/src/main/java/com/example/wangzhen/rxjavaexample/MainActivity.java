@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
             public CharSequence getPageTitle(int position) {
                 switch (position) {
                     case 0:
-                        return "基本";
+                        return getString(R.string.basic_tap);
                     default:
-                        return "基本";
+                        return getString(R.string.basic_tap);
                 }
             }
         });

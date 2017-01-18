@@ -3,4 +3,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="basic_tap">基本</string>
+    <string name="lovely_radio_button">可爱</string>
+    <string name="pretend_radio_button">装逼</string>
+    <string name="police_radio_button">110</string>
+    <string name="myself_radio_button">在下</string>
+
+    <string name="query_tip">\?</string>
 </resources>
