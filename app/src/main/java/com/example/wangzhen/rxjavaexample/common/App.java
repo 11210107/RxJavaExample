@@ -1,4 +1,4 @@
-package com.example.wangzhen.rxjavaexample;
+package com.example.wangzhen.rxjavaexample.common;
 
 import android.app.Application;
 

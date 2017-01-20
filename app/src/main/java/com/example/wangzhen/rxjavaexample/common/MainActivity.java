@@ -1,4 +1,4 @@
-package com.example.wangzhen.rxjavaexample;
+package com.example.wangzhen.rxjavaexample.common;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
+import com.example.wangzhen.rxjavaexample.R;
 import com.example.wangzhen.rxjavaexample.fragment.ElementaryFragment;
+import com.example.wangzhen.rxjavaexample.fragment.MapFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         return new ElementaryFragment();
+                    case 1:
+                        return new MapFragment();
                     default:
                         return new ElementaryFragment();
                 }
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         return getString(R.string.basic_tap);
+                    case 1:
+                        return getString(R.string.flat_map_tap);
                     default:
                         return getString(R.string.basic_tap);
                 }

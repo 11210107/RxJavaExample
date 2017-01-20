@@ -1,4 +1,4 @@
-package com.example.wangzhen.rxjavaexample.util;
+package com.example.wangzhen.rxjavaexample.common;
 
 /**
  * Created by wangzhen on 17/1/17.

@@ -1,7 +1,7 @@
 package com.example.wangzhen.rxjavaexample.network;
 
 import com.example.wangzhen.rxjavaexample.network.Api.PretendApi;
-import com.example.wangzhen.rxjavaexample.util.Constants;
+import com.example.wangzhen.rxjavaexample.common.Constants;
 
 import okhttp3.OkHttpClient;
 import retrofit2.CallAdapter;
