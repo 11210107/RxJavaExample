@@ -1,5 +1,6 @@
 package com.example.wangzhen.rxjavaexample.network;
 
+import com.example.wangzhen.rxjavaexample.network.Api.GankApi;
 import com.example.wangzhen.rxjavaexample.network.Api.PretendApi;
 import com.example.wangzhen.rxjavaexample.common.Constants;
 
@@ -16,6 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetWork {
 
     public static PretendApi pretendApi;
+    public static GankApi gankApi;
 
     public static OkHttpClient okHttpClient = new OkHttpClient();
     public static Converter.Factory gsonConvertFactory = GsonConverterFactory.create();
@@ -32,6 +34,20 @@ public class NetWork {
             pretendApi = retrofit.create(PretendApi.class);
         }
         return pretendApi;
+    }
+
+    public static GankApi getGankApi() {
+
+        if (gankApi == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl(Constants.gankApiBaseUrl)
+                    .addConverterFactory(gsonConvertFactory)
+                    .addCallAdapterFactory(rxJavaCallAdapterFactory)
+                    .build();
+            gankApi = retrofit.create(GankApi.class);
+        }
+        return gankApi;
     }
 
 }

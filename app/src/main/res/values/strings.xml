@@ -5,6 +5,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="basic_tap">基本</string>
     <string name="flat_map_tap">转换</string>
+    <string name="load_fail_message">数据加载失败</string>
+    <string name="pullup_load_more">上拉加载更多...</string>
+    <string name="loading_more">正在加载中...</string>
     <string name="lovely_radio_button">可爱</string>
     <string name="pretend_radio_button">装逼</string>
     <string name="police_radio_button">110</string>
@@ -12,4 +15,8 @@
     <string name="next_page">下一页</string>
     <string name="last_page">上一页</string>
     <string name="query_tip">\?</string>
+    <string name="elementary_dialog_text">RxJava 和 Retrofit 结合使用最基本的格式：用 subscribeOn() 和 observeOn() 来控制线程，并通过 subscribe() 来触发网络请求的开始。代码大致形式：\n\napi.getData()\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);</string>
+    <string name="elementary_api_source">* 本页 Sample 使用的 API 来自 <b>装逼大全</b> zhuangbi.info</string>
+
+
 </resources>

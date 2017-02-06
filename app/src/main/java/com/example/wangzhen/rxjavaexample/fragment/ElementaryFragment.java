@@ -25,14 +25,13 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import rx.Observer;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ElementaryFragment extends Fragment {
+public class ElementaryFragment extends BaseFragment {
 
 
     @Bind(R.id.radio_button_lovely)
@@ -56,7 +55,15 @@ public class ElementaryFragment extends Fragment {
 
     }
 
-    Subscription subscription ;
+    @Override
+    protected int getTitleRes() {
+        return R.string.basic_tap;
+    }
+
+    @Override
+    protected int getDialogLayout() {
+        return R.layout.dialog_elementary;
+    }
 
 
     Observer<List<CardImage>> observer = new Observer<List<CardImage>>() {
@@ -113,17 +120,11 @@ public class ElementaryFragment extends Fragment {
 
     }
 
-    protected void unSubscribe() {
-        if (subscription != null && subscription.isUnsubscribed()) {
-            subscription.unsubscribe();
-        }
-    }
 
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
-        unSubscribe();
     }
 }
