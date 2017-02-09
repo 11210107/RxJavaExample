@@ -3,6 +3,7 @@ package com.example.wangzhen.rxjavaexample.fragment;
 
 import android.app.AlertDialog;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 
 import com.example.wangzhen.rxjavaexample.R;
 
@@ -23,6 +24,7 @@ public abstract class BaseFragment extends Fragment {
 
     @OnClick(R.id.tip_query)
     public void onTipClick() {
+        Log.d("wzTest", "dialog");
         new AlertDialog.Builder(getContext())
                 .setTitle(getTitleRes())
                 .setView(getActivity().getLayoutInflater().inflate(getDialogLayout(), null))

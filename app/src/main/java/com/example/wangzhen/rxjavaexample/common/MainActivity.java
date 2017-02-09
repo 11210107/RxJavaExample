@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.wangzhen.rxjavaexample.R;
 import com.example.wangzhen.rxjavaexample.fragment.ElementaryFragment;
 import com.example.wangzhen.rxjavaexample.fragment.MapFragment;
+import com.example.wangzhen.rxjavaexample.fragment.RecyclerViewFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                         return new ElementaryFragment();
                     case 1:
                         return new MapFragment();
+                    case 2:
+                        return new RecyclerViewFragment();
                     default:
                         return new ElementaryFragment();
                 }
@@ -56,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                         return getString(R.string.basic_tap);
                     case 1:
                         return getString(R.string.flat_map_tap);
+                    case 2:
+                        return getString(R.string.recycler_view_tap);
                     default:
                         return getString(R.string.basic_tap);
                 }

@@ -7,4 +7,6 @@
     <color name="red">#FF00FF</color>
     <color name="yellow">#FFFF00</color>
     <color name="green">#00FFFF</color>
+    <color name="color_00">#8A000000</color>
+    <color name="split">#cccccc</color>
 </resources>
