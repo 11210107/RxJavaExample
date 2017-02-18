@@ -1,0 +1,39 @@
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: simhei;
+  min-height: 100%;
+  background-color: #af1d1d;
+}
+.main {
+  max-width: 7.5rem;
+  margin: 0 auto;
+}
+.main .videobox {
+  height: 4.22rem;
+  padding: 0.42rem 0.22rem 0.42rem 0.22rem;
+}
+.main .imagebg {
+  padding: 0 0.22rem 0.42rem 0.22rem;
+}
+.main .imagebg .regular {
+  height: 20.04rem;
+}
+.main .imagebg .complete {
+  padding-top: 0.42rem;
+  height: 10.44rem;
+}
+.main .imagebg .major {
+  padding-top: 0.42rem;
+  height: 7.56rem;
+}
+.main .imagebg .powerful {
+  padding-top: 0.42rem;
+  height: 9.66rem;
+}

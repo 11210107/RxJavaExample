@@ -14,8 +14,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.View;
 
-import com.example.wangzhen.rxjavaexample.adapter.WZRecyclerViewAdapter;
-
 
 public class DividerDecoration extends RecyclerView.ItemDecoration {
 

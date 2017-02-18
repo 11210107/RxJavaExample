@@ -14,14 +14,14 @@ import android.widget.Toast;
 
 import com.example.wangzhen.rxjavaexample.R;
 import com.example.wangzhen.rxjavaexample.adapter.RecyclerViewAdapter;
+import com.example.wangzhen.rxjavaexample.adapter.WZRecyclerViewAdapter;
 import com.example.wangzhen.rxjavaexample.domain.GankBeauty;
 import com.example.wangzhen.rxjavaexample.domain.MapResult;
 import com.example.wangzhen.rxjavaexample.network.NetWork;
 import com.example.wangzhen.rxjavaexample.widget.CustomLinearLayoutManager;
-import com.example.wangzhen.rxjavaexample.widget.DividerDecoration;
 import com.example.wangzhen.rxjavaexample.widget.LRecyclerView;
-import com.example.wangzhen.rxjavaexample.widget.LRecyclerViewAdapter;
 import com.example.wangzhen.rxjavaexample.widget.SampleFooter;
+import com.example.wangzhen.rxjavaexample.widget.recycleradapter.HeaderFooterRecyclerViewAdapter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -45,10 +45,11 @@ public class RecyclerViewFragment extends BaseFragment {
     @Bind(R.id.recycler_view)
     LRecyclerView mRecyclerView;
 
-    private LinearLayoutManager        mLinearLayoutManager;
-    private RecyclerViewAdapter        mRecyclerViewAdapter;
-    private StaggeredGridLayoutManager mStaggeredGridLayoutManager;
-    private LRecyclerViewAdapter       mWZRecyclerViewAdapter;
+    private LinearLayoutManager             mLinearLayoutManager;
+    private RecyclerViewAdapter             mRecyclerViewAdapter;
+    private StaggeredGridLayoutManager      mStaggeredGridLayoutManager;
+    private WZRecyclerViewAdapter           mWZRecyclerViewAdapter;
+    private HeaderFooterRecyclerViewAdapter mHeaderFooterRecyclerViewAdapter;
 
     public RecyclerViewFragment() {
     }
@@ -93,19 +94,23 @@ public class RecyclerViewFragment extends BaseFragment {
         //给recyclerView设置布局管理器
         //mRecyclerView.setLayoutManager(mCustomLinearLayoutManager);
         //添加分割线
-        DividerDecoration divider = new DividerDecoration.Builder(getActivity())
-                .setHeight(R.dimen.default_divider_height)
-                .setPadding(R.dimen.default_divider_padding)
-                .setColorResource(R.color.split)
-                .build();
-        //mRecyclerView.addItemDecoration(new MyDecoration(getActivity(),OrientationHelper.VERTICAL));
-        mRecyclerView.addItemDecoration(divider);
+//        DividerDecoration divider = new DividerDecoration.Builder(getActivity())
+//                .setHeight(R.dimen.default_divider_height)
+//                .setPadding(R.dimen.default_divider_padding)
+//                .setColorResource(R.color.split)
+//                .build();
+//        //mRecyclerView.addItemDecoration(new MyDecoration(getActivity(),OrientationHelper.VERTICAL));
+//        mRecyclerView.addItemDecoration(divider);
         //创建适配器
         mRecyclerViewAdapter = new RecyclerViewAdapter(getActivity());
-        mWZRecyclerViewAdapter = new LRecyclerViewAdapter(mRecyclerViewAdapter);
+        mWZRecyclerViewAdapter = new WZRecyclerViewAdapter(mRecyclerViewAdapter);
+        mHeaderFooterRecyclerViewAdapter = new HeaderFooterRecyclerViewAdapter(mRecyclerViewAdapter);
         //recyclerView设置适配器
-        mRecyclerView.setAdapter(mWZRecyclerViewAdapter);
-
+        mRecyclerView.setAdapter(mHeaderFooterRecyclerViewAdapter);
+        View header1 = LayoutInflater.from(getActivity()).inflate(R.layout.sample_header,(ViewGroup)getActivity().findViewById(android.R.id.content), false);
+        mHeaderFooterRecyclerViewAdapter.addHeaderView(header1);
+        mHeaderFooterRecyclerViewAdapter.addFooterView(header1);
+        mHeaderFooterRecyclerViewAdapter.removeFooterView();
         //add a HeaderView
         View header = LayoutInflater.from(getActivity()).inflate(R.layout.sample_header,(ViewGroup)getActivity().findViewById(android.R.id.content), false);
         mWZRecyclerViewAdapter.addHeaderView(header);

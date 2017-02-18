@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<script type="text/javascript">
+			eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('(c(7,a){8 4=7.v,f=r.q.p(/\\(i[^;]+;( s;)? u.+t o l/),2=f?m.k(a.n,3):1,2=5.F===5.E?2:1,d=\'e\'H 5?\'e\':\'G\';4.9.2=2;8 b=c(){8 0=4.D;h(0/2>6){0=6*2}4.9.0=0;4.9.w=j*(0/6);4.B.A=j*(0/6)+\'z\'};b();h(!7.g)y;a.g(d,b,x)})(C,5);',44,44,'width||dpr||docEl|window|750|doc|var|dataset|win|recalc|function|resizeEvt|orientationchange|isIOS|addEventListener|if||100|min|X|Math|devicePixelRatio|OS|match|userAgent|navigator|U|Mac|CPU|documentElement|percent|false|return|px|fontSize|style|document|clientWidth|self|top|resize|in'.split('|'),0,{}))
+		</script>
+		<link rel="stylesheet" href="yinVideo.css">
+	</head>
+	<body>
+		<div class="main">
+
+			<!--<video class="videobox" id="video" poster="video_bg.png" loop="loop">-->
+				<!--<source src="http://cloud.video.taobao.com/play/u/2554695624/p/1/e/6/t/1/fv/102/28552077.mp4" type="video/mp4"></source>-->
+			<!--</video>-->
+
+			<div class="videobox" id="video">
+				<img width="100%" height="100%" src="video_bg.png">
+			</div>
+
+
+			<div class="videobox" id="video_youku" style="display: none;">
+				<iframe height=100% width=100%  src="http://player.youku.com/embed/XMjI1NDg0NTczNg==" frameborder=0 allowfullscreen autoPlay=true>
+				</iframe>
+			</div>
+
+
+
+			<div class="imagebg">
+				<img class="regular" src="yin_regular.png"/>
+				<img class="complete" src="yin_complete.png"/>
+				<img class="major" src="yin_major.png"/>
+				<img class="powerful" src="yin_powerful.png"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	    var myVideo = document.getElementById("video");
+		var video_youku = document.getElementById("video_youku");
+		myVideo.onclick=function(){
+			video_youku.style.display = "block";
+			myVideo.style.display = "none";
+//			if(myVideo.paused){
+//					myVideo.play();
+//                }else{
+//                    myVideo.pause();
+//                }
+        }
+	</script>
+</html>

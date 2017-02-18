@@ -130,7 +130,9 @@ public class WZRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         int adapterCount;
         if (mInnerAdapter != null) {
             adapterCount = mInnerAdapter.getItemCount();
-
+            if (adjPosition < adapterCount) {
+                mInnerAdapter.onBindViewHolder(holder,adjPosition);
+            }
         }
     }
 
@@ -160,7 +162,7 @@ public class WZRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemCount() {
-        if (mInnerAdapter == null) {
+        if (mInnerAdapter != null) {
             return getHeaderViewCount() + getFooterViewsCount() + mInnerAdapter.getItemCount() + 1;
         } else {
             return getHeaderViewCount() + getFooterViewsCount() + 1;
@@ -284,5 +286,7 @@ public class WZRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public void setSpanSizeLookup(SpanSizeLookup spanSizeLookup) {
         this.mSpanSizeLookup = spanSizeLookup;
     }
+
+
 
 }

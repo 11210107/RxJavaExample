@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.wangzhen.rxjavaexample.R;
 import com.example.wangzhen.rxjavaexample.fragment.ElementaryFragment;
+import com.example.wangzhen.rxjavaexample.fragment.ImageViewFragment;
 import com.example.wangzhen.rxjavaexample.fragment.MapFragment;
 import com.example.wangzhen.rxjavaexample.fragment.RecyclerViewFragment;
 
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                         return new MapFragment();
                     case 2:
                         return new RecyclerViewFragment();
+                    case 3:
+                        return new ImageViewFragment();
                     default:
                         return new ElementaryFragment();
                 }

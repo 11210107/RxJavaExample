@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewParent;
 
+import com.example.wangzhen.rxjavaexample.widget.recycleradapter.HeaderFooterRecyclerViewAdapter;
+
 
 public class LRecyclerView extends RecyclerView {
     private boolean mPullRefreshEnabled = true;
@@ -35,7 +37,7 @@ public class LRecyclerView extends RecyclerView {
     private static final float DRAG_RATE = 2.0f;
     private int mPageSize = 10; //一次网络请求默认数量
 
-    private LRecyclerViewAdapter mWrapAdapter;
+    private HeaderFooterRecyclerViewAdapter mWrapAdapter;
     private boolean isNoMore = false;
     private boolean mIsVpDragger;
     private int mTouchSlop;
@@ -119,7 +121,7 @@ public class LRecyclerView extends RecyclerView {
 
     @Override
     public void setAdapter(Adapter adapter) {
-        mWrapAdapter = (LRecyclerViewAdapter) adapter;
+        mWrapAdapter = (HeaderFooterRecyclerViewAdapter) adapter;
         super.setAdapter(mWrapAdapter);
 
         if(flag) {
