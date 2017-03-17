@@ -3,8 +3,6 @@ package com.example.wangzhen.rxjavaexample.helper;
 import android.content.Context;
 import android.util.Log;
 
-import com.baidao.tools.AppUtil;
-import com.baidao.tools.TelephoneUtil;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;

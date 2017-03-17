@@ -4,19 +4,13 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.baidao.tools.NetworkUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ytx.library.provider.ApiFactory;
 
-import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-
-import retrofit2.Call;
-import retrofit2.Response;
 
 
 /**
@@ -80,16 +74,16 @@ public class Sender implements Runnable {
 
             hasMoreData = hasDataToSend();
 
-            while (!isSendingReady() || !hasMoreData) {
-                try {
-                    synchronized (sendMutex) {
-                        sendMutex.wait(120_000);//time out 2 minutes
-                    }
-                    hasMoreData = hasDataToSend();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+//            while (!isSendingReady() || !hasMoreData) {
+//                try {
+//                    synchronized (sendMutex) {
+//                        sendMutex.wait(120_000);//time out 2 minutes
+//                    }
+//                    hasMoreData = hasDataToSend();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
         }
     }
 
@@ -121,24 +115,25 @@ public class Sender implements Runnable {
     }
 
     private static boolean executeSyncPostTask(String json, Context context) {
-        try {
-
-            //Call call = ApiFactory.getStatisticsApi().sendLog(json);
-            Call call = ApiFactory.getNewUploadApi().sendListTrack(json);
-
-            Log.d(TAG, "executeSyncPostTask json: " + json);
-            Response response = call.execute();
-            Log.d("Sender", "code: " + response.code());
-            if (response.code() == HttpURLConnection.HTTP_OK) {
-                return true;
-            } else {
-                Log.e("Sender", "send tracker log to server error");
-                return false;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+//        try {
+//
+//            //Call call = ApiFactory.getStatisticsApi().sendLog(json);
+//            Call call = ApiFactory.getNewUploadApi().sendListTrack(json);
+//
+//            Log.d(TAG, "executeSyncPostTask json: " + json);
+//            Response response = call.execute();
+//            Log.d("Sender", "code: " + response.code());
+//            if (response.code() == HttpURLConnection.HTTP_OK) {
+//                return true;
+//            } else {
+//                Log.e("Sender", "send tracker log to server error");
+//                return false;
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return false;
+//        }
+        return true;
     }
 
     public boolean saveListToDB(String json) {
@@ -165,9 +160,9 @@ public class Sender implements Runnable {
         return (size > 0) || (getLastRecordIdFromDb() != null);
     }
 
-    private boolean isSendingReady() {
-        return NetworkUtil.isNetworkConnected(context);
-    }
+//    private boolean isSendingReady() {
+//        return NetworkUtil.isNetworkConnected(context);
+//    }
 
     public void addToQueue(String dataJson) {
         try {
